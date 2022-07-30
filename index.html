@@ -11,13 +11,59 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
+    <header>
+      <h1 class="title-text">splitter</p>
+    </header>
     <main>
-      Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-      person Total / person Reset
+        <div class="user-input-container">
+          <div class="single-input">
+            <label for="bill">Bill</label>
+            <div class="bill-input-field">
+            <input class="user-input" type="number" id="bill" name="bill" placeholder="0" />
+          </div>
+          </div>
+          <div class="single-input">
+            <label for="tip">Select Tip %</label>
+            <div class="tip-container" name="tip" >
+              <button class="tip-value-btn">5%</button>
+              <button class="tip-value-btn">10%</button>
+              <button class="tip-value-btn">15%</button>
+              <button class="tip-value-btn">25%</button>
+              <button class="tip-value-btn">50%</button>
+              <input class="custom-tip-field" type="number" name="custom-tip" id="tip" placeholder="Custom" />
+            </div>
+          </div>
+          <div class="single-input">
+            <label for="people">Number of People</label>
+            <div class="people-input-field">
+            <input class="user-input" type="number" id="people" name="people"  placeholder="0" />
+            </div>
+          </div>
+        </div>
+        <div class="results-container">
+          <div class="single-result-container">
+            <div class="result-description">
+              <label for="tip-amount">Tip Amount</label>
+              <span>/ person</span>
+            </div>
+            <img class="dollar-icon-cyan" src="/images/icon-dollar-cyan.svg" alt="">
+            <p class="result-value" name="tip-amount">0.00</p>
+          </div>
+          <div class="single-result-container">
+            <div class="result-description">
+              <label for="total">Total</label>
+              <span>/ person</span>
+            </div>
+            <img class="dollar-icon-cyan" src="/images/icon-dollar-cyan.svg" alt="">
+            <p class="result-value" name="total">0.00</p>
+          </div>
+          <button class="reset-btn">reset</button>
+        </div>
     </main>
     <footer>
       Challenge by

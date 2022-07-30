@@ -8,10 +8,30 @@
   margin: 0;
   padding: 0;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+button,
+input {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 /* VARIABLES */
 :root {
   --font-size: 24px;
   --strong-cyan: hsl(172, 67%, 45%);
+  --not-so-strong-cyan: hsl(172, 67%, 75%);
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
   --grayish-cyan: hsl(184, 14%, 56%);
@@ -24,4 +44,225 @@ body {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-size: var(--font-size);
+  min-height: 100vh;
+  background-color: var(--light-grayish-cyan);
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1;
+}
+
+header {
+  margin: 3rem auto;
+  word-wrap: break-word;
+  width: 7rem;
+}
+
+.title-text {
+  font-size: inherit;
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 10px;
+}
+
+main {
+  background-color: var(--white);
+  border-radius: 20px;
+  width: 375px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.user-input-container {
+  padding: 2rem;
+}
+
+.single-input {
+  width: 100%;
+}
+
+.single-input label {
+  display: block;
+  color: var(--dark-grayish-cyan);
+  font-size: calc(0.6 * var(--font-size));
+  padding: 0.5rem 0;
+}
+
+.user-input {
+  color: var(--very-dark-cyan);
+  padding-right: 15px;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+}
+
+input:hover {
+  border: 2px solid var(--strong-cyan);
+  border-radius: 5px;
+}
+
+.user-input::placeholder {
+  color: var(--dark-grayish-cyan);
+}
+
+.bill-input-field,
+.people-input-field {
+  position: relative;
+  height: 40px;
+}
+
+.bill-input-field:before {
+  content: url(/images/icon-dollar.svg);
+  position: absolute;
+  left: 15px;
+  top: 8px;
+}
+
+.people-input-field:before {
+  content: url(/images/icon-person.svg);
+  position: absolute;
+  left: 15px;
+  top: 8px;
+}
+
+.tip-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tip-value-btn {
+  border-radius: 5px;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  width: 45%;
+  height: 3rem;
+  margin: 8px 0;
+}
+
+.tip-value-btn:hover {
+  background-color: var(--not-so-strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.custom-tip-field {
+  background-color: var(--white);
+  text-align: right;
+  color: var(--very-dark-cyan);
+  padding-right: 1rem;
+  border-radius: 5px;
+  width: 45%;
+  height: 3rem;
+  margin: 8px 0;
+}
+
+.custom-tip-field::placeholder {
+  color: var(--dark-grayish-cyan);
+}
+
+.results-container {
+  background-color: var(--very-dark-cyan);
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.single-result-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.result-description {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.result-description label {
+  color: var(--white);
+  font-size: calc(0.6 * var(--font-size));
+}
+
+.result-description span {
+  color: var(--dark-grayish-cyan);
+  font-size: calc(0.5 * var(--font-size));
+}
+
+.dollar-icon-cyan {
+  justify-self: flex-end;
+  margin-left: auto;
+  height: 30px;
+}
+
+.result-value {
+  color: var(--strong-cyan);
+  font-size: 30px;
+}
+
+.reset-btn {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  opacity: 0.3;
+  font-size: calc(0.8 * var(--font-size));
+}
+
+.reset-btn:hover {
+  background-color: var(--not-so-strong-cyan);
+}
+
+/* footer */
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--very-dark-cyan);
+}
+
+footer a:hover {
+  color: var(--strong-cyan);
+}
+
+/* media queries */
+
+@media (min-width: 1024px) {
+  main {
+    display: flex;
+    width: 900px;
+  }
+
+  .user-input-container {
+    width: 50%;
+  }
+
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    margin: 2rem;
+    width: 50%;
+  }
+
+  .tip-value-btn,
+  .custom-tip-field {
+    width: 30%;
+  }
+
+  .reset-btn {
+    justify-self: flex-end;
+    margin-top: auto;
+  }
 }

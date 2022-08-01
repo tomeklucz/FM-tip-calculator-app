@@ -22,50 +22,36 @@ const tipApp = function () {
   /* EVENT LISTENERS */
   billInput.addEventListener("input", function () {
     billValue = +this.value;
-    activateResetBtn();
-    checkError(billValue, billError, billInput);
-    calculations();
+    handleEvent(billValue, billError, billInput);
   });
 
   tipContainer.addEventListener("click", function (e) {
     customTipInput.value = "";
-    if (e.target.classList.contains("tip-value")) {
-      clearTipBtns();
-      activateResetBtn();
-      removeError(tipError, customTipInput);
-      e.target.classList.add("active-btn");
-      tipValue = e.target.value;
-      calculations();
-    }
+    if (!e.target.classList.contains("tip-value")) return;
+    clearTipBtns();
+    e.target.classList.add("active-btn");
+    tipValue = e.target.value;
+    handleEvent(tipValue, tipError, customTipInput);
   });
 
   customTipInput.addEventListener("input", function () {
     clearTipBtns();
     tipValue = +this.value;
-    activateResetBtn();
-    checkError(tipValue, tipError, customTipInput);
-    calculations();
+    handleEvent(tipValue, tipError, customTipInput);
   });
 
   peopleInput.addEventListener("input", function () {
     peopleValue = +this.value;
-    activateResetBtn();
-    checkError(peopleValue, peopleError, peopleInput);
-    calculations();
+    handleEvent(peopleValue, peopleError, peopleInput);
   });
 
-  resetBtn.addEventListener("click", function () {
-    resetApp();
-  });
+  resetBtn.addEventListener("click", () => resetApp());
 
   /* FUNCTIONS */
-  const clearTipBtns = function () {
+  const clearTipBtns = () =>
     tipBtns.forEach((btn) => btn.classList.remove("active-btn"));
-  };
 
-  const activateResetBtn = function () {
-    resetBtn.classList.add("full-opacity");
-  };
+  const activateResetBtn = () => resetBtn.classList.add("full-opacity");
 
   const resetApp = function () {
     billInput.value = "";
@@ -83,12 +69,10 @@ const tipApp = function () {
     removeError(tipError, customTipInput);
   };
 
-  const checkError = function (number, error, input) {
-    if (number === 0) {
-      addError(error, input);
-    } else {
-      removeError(error, input);
-    }
+  const handleEvent = function (number, error, input) {
+    activateResetBtn();
+    number === 0 ? addError(error, input) : removeError(error, input);
+    calculations();
   };
 
   const addError = function (error, input) {
@@ -102,12 +86,11 @@ const tipApp = function () {
   };
 
   const calculations = function () {
-    if (billValue > 0 && peopleValue > 0 && tipValue > 0) {
-      const tipAmountValue = (billValue * (tipValue / 100)) / peopleValue;
-      const totalValue = billValue / peopleValue + tipAmountValue;
-      tipAmount.innerHTML = tipAmountValue.toFixed(2);
-      total.innerHTML = totalValue.toFixed(2);
-    }
+    if (!(billValue > 0 && peopleValue > 0 && tipValue > 0)) return;
+    const tipAmountValue = (billValue * (tipValue / 100)) / peopleValue;
+    const totalValue = billValue / peopleValue + tipAmountValue;
+    tipAmount.innerHTML = tipAmountValue.toFixed(2);
+    total.innerHTML = totalValue.toFixed(2);
   };
 };
 

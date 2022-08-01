@@ -12,6 +12,8 @@
     />
     <link rel="stylesheet" href="style.css" />
 
+    <script defer src="script.js"></script>
+
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
@@ -23,33 +25,33 @@
           <div class="single-input">
             <div class="label-container">
               <label for="bill">Bill</label>
-              <span class="error-message hidden">Can't be zero</span>
+              <span class="error-message bill-error hidden">Can't be zero</span>
             </div>
             <div class="bill-input-field">
-            <input class="user-input" type="number" id="bill" name="bill" placeholder="0" />
+            <input class="user-input bill-input" type="number" id="bill" name="bill" placeholder="0" />
           </div>
           </div>
           <div class="single-input">
             <div class="label-container">
               <label for="tip">Select Tip %</label>
-              <span class="error-message hidden">Can't be zero</span>
+              <span class="error-message tip-error hidden">Can't be zero</span>
             </div>
             <div class="tip-container" name="tip" >
-              <button class="select-tip-btn tip-value">5%</button>
-              <button class="select-tip-btn tip-value">10%</button>
-              <button class="select-tip-btn tip-value">15%</button>
-              <button class="select-tip-btn tip-value">25%</button>
-              <button class="select-tip-btn tip-value">50%</button>
+              <button class="select-tip-btn tip-value" value="5">5%</button>
+              <button class="select-tip-btn tip-value" value="10">10%</button>
+              <button class="select-tip-btn tip-value" value="15">15%</button>
+              <button class="select-tip-btn tip-value" value="25">25%</button>
+              <button class="select-tip-btn tip-value" value="50">50%</button>
               <input class="select-tip-btn custom-tip-field" type="number" name="custom-tip" id="tip" placeholder="Custom" />
             </div>
           </div>
           <div class="single-input">
             <div class="label-container">
               <label for="people">Number of People</label>
-              <span class="error-message hidden">Can't be zero</span>
+              <span class="error-message people-error hidden">Can't be zero</span>
             </div>
             <div class="people-input-field">
-            <input class="user-input" type="number" id="people" name="people"  placeholder="0" />
+            <input class="user-input people-input" type="number" id="people" name="people"  placeholder="0" />
             </div>
           </div>
         </section>
@@ -60,7 +62,7 @@
               <span>/ person</span>
             </div>
             <img class="dollar-icon-cyan" src="/images/icon-dollar-cyan.svg" alt="">
-            <p class="result-value" name="tip-amount">0.00</p>
+            <p class="result-value tip-amount">0.00</p>
           </div>
           <div class="single-result-container">
             <div class="result-description">
@@ -68,7 +70,7 @@
               <span>/ person</span>
             </div>
             <img class="dollar-icon-cyan" src="/images/icon-dollar-cyan.svg" alt="">
-            <p class="result-value" name="total">0.00</p>
+            <p class="result-value total">0.00</p>
           </div>
           <button class="reset-btn">reset</button>
         </section>

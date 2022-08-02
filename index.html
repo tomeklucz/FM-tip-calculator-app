@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
     <link
       rel="icon"
       type="image/png"
@@ -18,62 +18,86 @@
   </head>
   <body>
     <header>
-      <h1 class="title-text">splitter</p>
+      <h1 class="title-text">splitter</h1>
     </header>
     <main>
-        <section class="user-input-section">
-          <div class="single-input">
-            <div class="label-container">
-              <label for="bill">Bill</label>
-              <span class="error-message bill-error hidden">Can't be zero</span>
-            </div>
-            <div class="bill-input-field">
-            <input class="user-input bill-input" type="number" id="bill" name="bill" placeholder="0" />
+      <section class="user-input-section">
+        <div class="single-input">
+          <div class="label-container">
+            <label for="bill">Bill</label>
+            <span class="error-message bill-error hidden">Can't be zero</span>
           </div>
+          <div class="bill-input-field">
+            <input
+              class="user-input bill-input"
+              type="number"
+              id="bill"
+              name="bill"
+              placeholder="0"
+            />
           </div>
-          <div class="single-input">
-            <div class="label-container">
-              <label for="tip">Select Tip %</label>
-              <span class="error-message tip-error hidden">Can't be zero</span>
-            </div>
-            <div class="tip-container" name="tip" >
-              <button class="select-tip-btn tip-value" value="5">5%</button>
-              <button class="select-tip-btn tip-value" value="10">10%</button>
-              <button class="select-tip-btn tip-value" value="15">15%</button>
-              <button class="select-tip-btn tip-value" value="25">25%</button>
-              <button class="select-tip-btn tip-value" value="50">50%</button>
-              <input class="select-tip-btn custom-tip-field" type="number" name="custom-tip" id="tip" placeholder="Custom" />
-            </div>
+        </div>
+        <div class="single-input">
+          <div class="label-container">
+            <label for="tip">Select Tip %</label>
+            <span class="error-message tip-error hidden">Can't be zero</span>
           </div>
-          <div class="single-input">
-            <div class="label-container">
-              <label for="people">Number of People</label>
-              <span class="error-message people-error hidden">Can't be zero</span>
-            </div>
-            <div class="people-input-field">
-            <input class="user-input people-input" type="number" id="people" name="people"  placeholder="0" />
-            </div>
+          <div class="tip-container">
+            <button class="select-tip-btn tip-value" value="5">5%</button>
+            <button class="select-tip-btn tip-value" value="10">10%</button>
+            <button class="select-tip-btn tip-value" value="15">15%</button>
+            <button class="select-tip-btn tip-value" value="25">25%</button>
+            <button class="select-tip-btn tip-value" value="50">50%</button>
+            <input
+              class="select-tip-btn custom-tip-field"
+              type="number"
+              id="tip"
+              placeholder="Custom"
+            />
           </div>
-        </section>
-        <section class="results-section">
-          <div class="single-result-container">
-            <div class="result-description">
-              <label for="tip-amount">Tip Amount</label>
-              <span>/ person</span>
-            </div>
-            <img class="dollar-icon-cyan" src="/images/icon-dollar-cyan.svg" alt="">
-            <p class="result-value tip-amount">0.00</p>
+        </div>
+        <div class="single-input">
+          <div class="label-container">
+            <label for="people">Number of People</label>
+            <span class="error-message people-error hidden">Can't be zero</span>
           </div>
-          <div class="single-result-container">
-            <div class="result-description">
-              <label for="total">Total</label>
-              <span>/ person</span>
-            </div>
-            <img class="dollar-icon-cyan" src="/images/icon-dollar-cyan.svg" alt="">
-            <p class="result-value total">0.00</p>
+          <div class="people-input-field">
+            <input
+              class="user-input people-input"
+              type="number"
+              id="people"
+              placeholder="0"
+            />
           </div>
-          <button class="reset-btn">reset</button>
-        </section>
+        </div>
+      </section>
+      <section class="results-section">
+        <div class="single-result-container">
+          <div class="result-description">
+            <label for="tip-amount">Tip Amount</label>
+            <span>/ person</span>
+          </div>
+          <img
+            class="dollar-icon-cyan"
+            src="/images/icon-dollar-cyan.svg"
+            alt=""
+          />
+          <p class="result-value tip-amount" id="tip-amount">0.00</p>
+        </div>
+        <div class="single-result-container">
+          <div class="result-description">
+            <label for="total">Total</label>
+            <span>/ person</span>
+          </div>
+          <img
+            class="dollar-icon-cyan"
+            src="/images/icon-dollar-cyan.svg"
+            alt=""
+          />
+          <p class="result-value total" id="total">0.00</p>
+        </div>
+        <button class="reset-btn">reset</button>
+      </section>
     </main>
     <footer>
       Challenge by
